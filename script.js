@@ -6,6 +6,12 @@ function printArea(elementId, area) {
     const element = document.getElementById(elementId);
     element.innerText = area;
 }
+function minusValidation(a, b) {
+    if(a<0 || b < 0 ){
+        alert ('Please Enter Positive Number');
+        return ;
+    }
+}
 function addToEntry(areaType, area) {
     const calculationEntry = document.getElementById('calculation-entry')
     const count = calculationEntry.childElementCount;
@@ -18,6 +24,7 @@ function addToEntry(areaType, area) {
 function calculateTriangleArea() {
     const base = getValue('triangle-base');
     const height = getValue('triangle-height');
+    minusValidation(base, height);
     if(isNaN(base) || isNaN(height)){
         alert('Please insert number');
         return
@@ -29,6 +36,7 @@ function calculateTriangleArea() {
 function calculateRectangleArea() {
     const width = getValue('rectangle-width');
     const length = getValue('rectangle-length');
+    minusValidation(width, length);
     if(isNaN(width) || isNaN(length)){
         alert('Please insert number');
         return
@@ -40,6 +48,7 @@ function calculateRectangleArea() {
 function calculateParallelogramArea(){
     const base = getValue('parallelogram-base');
     const height = getValue('parallelogram-height');
+    minusValidation(base, height);
     if(isNaN(base) || isNaN(height)){
         alert('Please insert number');
         return
@@ -51,6 +60,7 @@ function calculateParallelogramArea(){
 function calculateEllipseArea(){
     const xAxis = getValue('ellipse-major-radius');
     const yAxis = getValue('ellipse-minor-radius');
+    minusValidation(xAxis, yAxis);
     if(isNaN(xAxis) || isNaN(yAxis)){
         alert('Please insert number');
         return
@@ -62,6 +72,7 @@ function calculateEllipseArea(){
 function calculateRhombusArea(){
     const base = getValue('rhombus-base');
     const height = getValue('rhombus-height');
+    minusValidation(base, height);
     if(isNaN(base) || isNaN(height)){
         alert('Please insert number');
         return
@@ -72,8 +83,8 @@ function calculateRhombusArea(){
 }
 function calculatePentagonArea(){
     const a = getValue('pentagon-apothem');
-    console.log(a);
     const s = getValue('pentagon-side-length');
+    minusValidation(a, s);
     if(isNaN(a) || isNaN(s)){
         alert('Please insert number');
         return
